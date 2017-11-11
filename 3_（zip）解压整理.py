@@ -4,7 +4,9 @@ os.chdir (os.getcwd ())
 
 ###############################获取所有解压文件##########################################
 list_zip=[files for files in os.listdir('.') if files.endswith('.zip')]
-
+list_pdf=[files for files in os.listdir('.') if files.endswith('.pdf')]
+list_doc=[files for files in os.listdir('.') if files.endswith('.doc')]
+list_docx=[files for files in os.listdir('.') if files.endswith('.docx')]
 #################################获得文件名序号##########################################
 
 def get_name():
@@ -50,5 +52,20 @@ for zipname in list_zip:
     os.unlink(zipname)
 
 #############################整理完成####################################################
-print('整理完成,共处理了',len(list_zip),'个文件。',sep='')
+for docname in list_doc:
+    doc_name=get_name()+os.path.basename(docname)
+    os.rename(docname,doc_name)
+for docxname in list_docx:
+    docx_name=get_name()+os.path.basename(docxname)
+    os.rename(docxname,docx_name)
+for pdfname in list_pdf:
+    pdf_name=get_name()+os.path.basename(pdfname)
+    os.rename(pdfname,pdf_name)
 
+_=len(list_zip)+len(list_doc)+len(list_docx)+len(list_pdf)
+if _==0:
+    print('不存在zip文件')
+    input()
+else:
+    print('整理完成,共处理了',_,'个文件。',sep='')
+    time.sleep(1)
