@@ -54,13 +54,17 @@ for zipname in list_zip:
 #############################整理完成####################################################
 for docname in list_doc:
     doc_name=get_name()+os.path.basename(docname)
-    os.rename(docname,doc_name)
+    os.makedirs(doc_name)
+    shutil.move(docname,doc_name)   
+
 for docxname in list_docx:
     docx_name=get_name()+os.path.basename(docxname)
-    os.rename(docxname,docx_name)
+    os.makedirs(docx_name)
+    shutil.move(docxname,docx_name)   
 for pdfname in list_pdf:
     pdf_name=get_name()+os.path.basename(pdfname)
-    os.rename(pdfname,pdf_name)
+    os.makedirs(pdf_name)
+    shutil.move(pdfname,pdf_name)   
 
 _=len(list_zip)+len(list_doc)+len(list_docx)+len(list_pdf)
 if _==0:
