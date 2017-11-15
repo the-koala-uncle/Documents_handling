@@ -9,15 +9,15 @@ list3_save=[]
 
 
 ##############################改动的地方######################################
-name1='zero.xlsx'
-name2='deal.xlsx'
+name1='1.xlsx'
+name2='2.xlsx'
 wb1 = openpyxl.load_workbook(name1)
 wb2 = openpyxl.load_workbook(name2)
 sheet1 = wb1.get_sheet_by_name('Sheet1')
 sheet2 = wb2.get_sheet_by_name('Sheet1')
 #list3_save=['A','B','C','D','E','F','G','H','I','J','K','L','M','N''O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE']
 #list3_save=['L','M']
-list3_save=['A','B','C','D','E','F','G','H','I','J','K','L','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE']
+list3_save=['A','B','C','D','E','F','G','H','I','J','K','L','M','N''O','P','Q','R','S','T','U']
 
 
 
@@ -25,7 +25,7 @@ list3_save=['A','B','C','D','E','F','G','H','I','J','K','L','S','T','U','V','W',
 
 print('对比中……' )
 start_row=1
-end_row=4160
+end_row=29
 print('******'.ljust(10)+name1[:-5].ljust(10)+name2[:-5])
 for index in list3_save:
     for row in range(start_row,end_row+1):
