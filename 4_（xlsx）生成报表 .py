@@ -30,7 +30,7 @@ print('开始读取文档……' )
 if index==1:
 
     wb1 = openpyxl.load_workbook(n1,data_only=True)
-    wb2 = openpyxl.load_workbook('模板1.xlsx',data_only=True)
+    wb2 = openpyxl.load_workbook('模板/模板1.xlsx',data_only=True)
 
     sheet1 = wb1.get_sheet_by_name('Sheet1')
     sheet2 = wb2.get_sheet_by_name('Sheet1')
@@ -73,7 +73,7 @@ if index==1:
 ########################################################
 if index==2:
     wb1 = openpyxl.load_workbook(n1,data_only=True)
-    wb3 = openpyxl.load_workbook('模板2.xlsx',data_only=True)
+    wb3 = openpyxl.load_workbook('模板/模板2.xlsx',data_only=True)
 
     sheet1 = wb1.get_sheet_by_name('Sheet1')
     sheet3 = wb3.get_sheet_by_name('Sheet1')
@@ -118,10 +118,10 @@ if index==2:
 
     print('填写数据……' )
 
-    for r in range(5,25): 
+    for r in range(9,29): 
         for t in ['B','C','D','E','G','H','K']:
             num=t+str(r)
-            temp=data2[r-5].pop(0)
+            temp=data2[r-9].pop(0)
             sheet3[num]=temp
 
     wb3.save(n3)
