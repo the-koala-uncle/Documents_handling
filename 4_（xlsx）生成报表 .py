@@ -7,9 +7,9 @@ print('1.生成村村通进度表')
 print('2.生成建设任务完成情况表')
 index =int(input())
 date=time.strftime('%m-%d@%H')
-n1=date+'省级村村通总表.xlsx'
-n2=date+'村村通自来水工程建设进度情况表.xlsx'
-n3=date+'建设任务完成情况表.xlsx'
+n1='省级村村通总表'+date+'.xlsx'
+n2='村村通自来水工程建设进度情况表'+date+'.xlsx'
+n3='建设任务完成情况表'+date+'.xlsx'
 sourceDir=(os.path.abspath(os.path.join(os.getcwd(), "..",'2_省级村村通总表.xlsx')))
 try:
     os.remove(n1)
@@ -116,7 +116,7 @@ if index==2:
         peo1=sheet1['L'+n].value
         
         
-        peo=int(peo1)+peo2_list[p222]*1.2
+        peo=int(peo1)+peo2_list[p222]*1.1#fangdaixishu
 
         temp_list.append(peo)
         peo2=0
@@ -137,7 +137,8 @@ if index==2:
             temp=data2[r-9].pop(0)
             sheet3[num]=temp
     sheet3['S6']='良垌加一减一'
-    sheet3['S7']='青平5个调整村庄共30.735元'  
+    sheet3['S7']='青平5个调整村庄共30.735元'
+    sheet3['S8']='上月报通水人数河唇11504，石颈3697，长山3558，青平3100'  
     wb3.save(n3)
     os.startfile(n3)
 
