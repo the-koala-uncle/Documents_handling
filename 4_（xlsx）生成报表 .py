@@ -4,12 +4,12 @@ os.chdir(os.getcwd())
 
 print('请选择命令：')
 print('1.生成村村通进度表')
-print('2.生成通报表')
+print('2.生成建设任务完成情况表')
 index =int(input())
 date=time.strftime('%m-%d@%H')
 n1=date+'省级村村通总表.xlsx'
 n2=date+'村村通自来水工程建设进度情况表.xlsx'
-n3=date+'通报表.xlsx'
+n3=date+'建设任务完成情况表.xlsx'
 sourceDir=(os.path.abspath(os.path.join(os.getcwd(), "..",'2_省级村村通总表.xlsx')))
 try:
     os.remove(n1)
@@ -73,7 +73,7 @@ if index==1:
 ########################################################
 if index==2:
     wb1 = openpyxl.load_workbook(n1,data_only=True)
-    wb3 = openpyxl.load_workbook('模板/模板2.xlsx',data_only=True)
+    wb3 = openpyxl.load_workbook('模板/模板2.xlsx')
 
     sheet1 = wb1.get_sheet_by_name('Sheet1')
     sheet3 = wb3.get_sheet_by_name('Sheet1')
@@ -82,7 +82,28 @@ if index==2:
     print('获取数据……' )
     data2=[]
     list2=['9','78','142','195','211','347','364','448','529','694','758','832','941','1012','1075','1182','1280','1343','1423','1439']
+    list2_=['9','78','142','195','211','347','364','448','529','694','758','832','941','1012','1075','1182','1280','1343','1423','1439','1453']
+    peo2=0
+    peo2_list=[]
+    for m_n in range(0,20):
+        num_1=int(list2_[m_n])+1
+        num_2=int(list2_[m_n+1])
+        for nn in range(num_1,num_2):
+            try:
+                int(sheet1['AG'+str(nn)].value)
+                try:
+                    int(sheet1['AM'+str(nn)].value)
+                except:
+
+                    peo2=peo2+int(sheet1['G'+str(nn)].value)
+            except:
+                pass
+        peo2_list.append(peo2)
+        peo2=0
+    p222=0
+
     for n in list2:
+        
         temp_list=[]
         n=str(n)
         temp_list.append(sheet1['X'+n].value)
@@ -93,26 +114,18 @@ if index==2:
         temp_list.append(finish)
         temp_list.append(sheet1['AB'+n].value)
         peo1=sheet1['L'+n].value
-        peo2=0
-        for m_n in range(0,19,2):
-            num_1=int(list2[m_n])+1
-            num_2=int(list2[m_n+1])
-            for nn in range(num_1,num_2):
-                try:
-                    int(sheet1['AG'+nn].value)
-                    try:
-                        int(sheet1['AM'+nn].value)
-                    except:
-                        peo2=peo2+int(sheet1['G'+nn].value)
-                except:
-                    pass
-        peo=int(peo1)+peo2
+        
+        
+        peo=int(peo1)+peo2_list[p222]*1.2
 
         temp_list.append(peo)
+        peo2=0
         fate=sheet1['AH'+n].value+sheet1['AJ'+n].value+sheet1['AL'+n].value
         temp_list.append(fate)    
         temp_list.append(round(peo/sheet1['AB'+n].value,4))
         data2.append(temp_list)
+
+        p222=p222+1
     data2.sort(key=lambda x:x[-1],reverse=True)
 
 
@@ -123,7 +136,8 @@ if index==2:
             num=t+str(r)
             temp=data2[r-9].pop(0)
             sheet3[num]=temp
-
+    sheet3['S6']='良垌加一减一'
+    sheet3['S7']='青平5个调整村庄共30.735元'  
     wb3.save(n3)
     os.startfile(n3)
 
