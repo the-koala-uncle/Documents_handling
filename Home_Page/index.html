@@ -2,9 +2,13 @@
     <head>
         <SCRIPT LANGUAGE="JavaScript">
             <!--
+
             function onload(){
     //                var obj=document.getElementById('jk');
+                    var firstInput=document.getElementsByTagName("input")[1];
+                    firstInput.select();
             }
+
             function fnChange(){
             }
             function onClear(){
@@ -19,6 +23,7 @@
                             oWin.src=sJK + sVipUrl;
                     }
             }
+            
     //        function iFrameHeight() { 
     //                var ifm = document.getElementById("play"); 
     //                var subWeb = document.frames ? document.frames["play"].document : ifm.contentDocument;
@@ -77,7 +82,7 @@
             <form action="http://www.baidu.com/baidu" target="_blank" id="form" name="f" action="/s" class="fm">
                 <div align="center" > 
                     <input name=tn type=hidden value=baidu >
-                    <input type=text name=word size=80 >
+                    <input type=text id='in' name=word size=80 >
                     <input class="button" type="submit" value="百度一下" style="color:#FFFFFF;"/>
                 </div>
             </form>
