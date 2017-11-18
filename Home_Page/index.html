@@ -1,71 +1,93 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<html>
     <head>
-        <meta chatset="UTF-8"/>
+        <SCRIPT LANGUAGE="JavaScript">
+            <!--
+            function onload(){
+    //                var obj=document.getElementById('jk');
+            }
+            function fnChange(){
+            }
+            function onClear(){
+                    document.getElementById("vipurl").value="";
+            }
+            function onPlay(){
+                    var oJK = document.getElementById("jk");
+                    var sJK=oJK.options[oJK.selectedIndex].value;
+                    var sVipUrl = document.getElementById("vipurl").value;
+                    var oWin = document.getElementById("play");
+                    if (sVipUrl.length>0){
+                            oWin.src=sJK + sVipUrl;
+                    }
+            }
+    //        function iFrameHeight() { 
+    //                var ifm = document.getElementById("play"); 
+    //                var subWeb = document.frames ? document.frames["play"].document : ifm.contentDocument;
+    //                ifm.height = subWeb.body.scrollHeight;
+    //                ifm.width = subWeb.body.scrollWidth;
+    //        }
+            -->
+        </SCRIPT>
         <title>Home</title>
         <style>  
-        body{background:#E6E6E6;}
-        .main{height:100px; margin:0px auto; width:960px;}
-        .baidu{height:80px; margin:0px auto; width:960px;}
-        .image{
-            width:230px;
-            height:90px;
-            box-shadow:0px 0px 10px black;
-            border:2px solid white;
-        }
-        .fm{clear:both;position:relative;z-index:297}
-        #form{margin:22px auto 0;width:860px;text-align:left;z-index:100}
-        #form .bdsug,#fm .bdsug{top:35px}
+            body{background:#E6E6E6;}
+            .main{height:100px; margin:0px auto; width:960px;}
+            .baidu{height:80px; margin:0px auto; width:960px;}
+            .image{
+                width:230px;
+                height:90px;
+                box-shadow:0px 0px 10px black;
+                border:2px solid white;
+            }
+            .fm{clear:both;position:relative;z-index:297}
+            #form{margin:22px auto 0;width:800px;text-align:left;z-index:100}
+            #form .bdsug,#fm .bdsug{top:35px}
 
 
-        input{
-            height: 24px;
-            /*border-color:#3285FF; */
-            padding: 4px 4px;
-            font-size: 18px;
-            float: left;
-        }
-        .button{height:36px; margin:0px; padding:0px; width:100px;background: url("image/button.jpg") no-repeat;border:none;cursor: pointer;}
+            .baidu input{
+                height: 36px;
+                /*border-color:#3285FF; */
+                padding: 4px 4px;
+                font-size: 18px;
+                float: left;
+            }
+            .button{height:36px; margin:0px; padding:0px; width:100px;background: url("image/button.jpg") no-repeat;border:none;cursor: pointer;}
 
 
-        .image:hover,.image:focus{  
-        -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);  
-        -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);  
-        box-shadow:10px 10px 10px rgba(0,0,0,.7);  
-        
-        -webkit-transform: scale(1.10);  
-        -moz-transform: scale(1.10);  
-        -o-transform: scale(1.10);  
-        position:relative;  
-        z-index:5; 
-        -moz-transition:-moz-transform .15s linear;  
-        -o-transition:-o-transform .15s linear;  
-        -webkit-transition:-webkit-transform .15s linear;  
-        border:2px solid blue; 
-        } 
+            .image:hover,.image:focus{  
+            -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);  
+            -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);  
+            box-shadow:10px 10px 10px rgba(0,0,0,.7);  
+            
+            -webkit-transform: scale(1.10);  
+            -moz-transform: scale(1.10);  
+            -o-transform: scale(1.10);  
+            position:relative;  
+            z-index:5; 
+            -moz-transition:-moz-transform .15s linear;  
+            -o-transition:-o-transform .15s linear;  
+            -webkit-transition:-webkit-transform .15s linear;  
+            border:2px solid blue; 
+            } 
 
         </style>
     </head>
-    <body>
-        <br>
-        <br>
-        <br>
-        
+    <body onload="onload()" bgcolor=#000000>
+        <br><br>
         <div class="baidu">
-        <form action="http://www.baidu.com/baidu" target="_blank" id="form" name="f" action="/s" class="fm">
-            <div align="center" > 
-                <input name=tn type=hidden value=baidu >
-                <input type=text name=word size=80 >
-                <input class="button" type="submit" value="百度一下" style="color:#FFFFFF;"/>
-            </div>
-        </form>
+            <form action="http://www.baidu.com/baidu" target="_blank" id="form" name="f" action="/s" class="fm">
+                <div align="center" > 
+                    <input name=tn type=hidden value=baidu >
+                    <input type=text name=word size=80 >
+                    <input class="button" type="submit" value="百度一下" style="color:#FFFFFF;"/>
+                </div>
+            </form>
         </div>
 
         <div class="main" >
             <a href="http://www.jianshu.com/"><img  class="image" src="image/logo4.jpg" alt="360"/></a>
             
-	        <a href="https://www.52pojie.cn/"><img  class="image" src="image/logo1.jpg" alt="w3school" /></a>
-	        <a href="http://www.360kan.com/dianshi/index.html"><img  class="image" src="image/logo3.jpg" alt="360"/></a>
+            <a href="https://www.52pojie.cn/"><img  class="image" src="image/logo1.jpg" alt="w3school" /></a>
+            <a href="http://www.360kan.com/dianshi/index.html"><img  class="image" src="image/logo3.jpg" alt="360"/></a>
             <a href="http://www.360kan.com/zongyi/index.html"><img  class="image" src="image/logo2.jpg"   /></a>
             <br>
             <br>
@@ -87,12 +109,108 @@
 
         </div>
 
-
-
         
+       
+      
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
 
 
+        <table  width="100%" align="center" height="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td height="9">
+                    <form method="post" action="">
+                        <select name="jk" id="jk" size=1 onchange="fnChange()">
+                            <option value="http://api.baiyug.cn/vip/index.php?url=" selected>超清</option>
 
+                            <option value="http://www.vipjiexi.com/yun.php?url=" selected>接口1</option>
 
-     </body>
+                            <option value="http://api.1008net.com/v.php?url=" selected>接口2</option>
+
+                            <option value="http://api.nepian.com/ckparse/?url=" selected>接口3</option>
+
+                            <option value="http://player.jidiaose.com/supapi/iframe.php?v=" selected>接口4</option>
+
+                            <option value="http://api.pucms.com/index.php?url=" selected>接口5</option>
+
+                            <option value="http://api.wlzhan.com/sudu/?url=" selected>接口6</option>
+
+                            <option value="http://www.0335haibo.com/yun.php?url=" selected>接口7</option>
+
+                            <option value="http://yun.mt2t.com/yun?url=" selected>接口8</option>
+
+                            <option value="http://y.mt2t.com/lines?url=" selected>接口9</option>
+
+                            <option value="http://www.0335haibo.com/yun.php?url=" selected>接口10</option>
+
+                            <option value="http://www.sfsft.com/video.php?url=" selected>接口11</option>
+
+                            <option value="http://www.82190555.com/video.php?url= selected>接口12</option>
+
+                            <option value="http://2.jx.72du.com/video.php?url= selected>接口13</option>
+
+                            <option value="http://www.97panda.com/kkflv/index.php?url=" selected>接口14</option>
+
+                            <option value="http://jx.vgoodapi.com/jx.php?url=" selected>接口15</option>
+
+                            <option value="http://www.dgua.xyz/webcloud/?url=" selected>接口16</option>
+
+                            <option value="http://api.91exp.com/svip/?url=" selected>接口17</option>
+
+                            <option value="http://vip.jlsprh.com/index.php?url=" selected>接口18</option>
+
+                            <option value="http://api.xfsub.com/index.php?url=" selected>接口19</option>
+
+                            <option value="http://jiexi.071811.cc/jx.php?url=" selected>接口20</option>
+
+                            <option value="http://jiexi.92fz.cn/player/vip.php?url=" selected>接口21</option>
+
+                            <option value="http://api.baiyug.cn/vip/index.php?url=" selected>接口22</option>
+
+                            <option value="http://api.662820.com/xnflv/index.php?url=" selected>接口23</option>
+
+                            <option value="http://www.82190555.com/index/qqvod.php?url=" selected>接口24</option>
+                            <option value="http://yyygwz.com/index.php?url=" selected>接口25</option>
+
+                            <option value="http://www.97panda.com/kkflv/index.php?url=" selected>接口26</option>
+
+                            <option value="http://jx.api.163ren.com/vod.php?url=" selected>接口27</option>
+
+                            <option value="http://lookxw.com/yingzi/?url=" selected>接口28</option>
+
+                            <option value="http://www.0335haibo.com/tong.php?url=" selected>接口29</option>
+
+                            <option value="http://www.wmxz.wang/video.php?url=" selected>接口30</option>
+
+                            <option value="http://api.97kn.com/?url=" selected>接口31</option>
+
+                            <option value="https://aikanapi.duapp.com/odflv105/index.php?url=" selected>接口32</option>
+                            <option value="http://v.buy360.vip/wwcx/index.php?url=" selected>接口33</option>
+                            <option value="http://api.lequgirl.com/?url=" selected>接口34</option>
+                            <option value="https://jxapi.nepian.com/ckparse/?url=" selected>接口35</option>
+                            <option value="http://91k.co/play.php?url=" selected>接口36</option>
+                            <option value="http://www.52jiexi.com/yun.php?url=" selected>接口37</option>
+                            <option value="http://mt2t.com/yun?url=">接口38</option>
+                            <option value="http://000o.cc/jx/ty.php?url=">接口39</option>
+                            <option value="http://yyygwz.com/index.php?url=">接口40</option>
+                            <option value="http://vipjiexi.com/vip.php?url=">接口41</option>
+                            <option value="http://www.wmxz.wang/video.php?url=">接口42</option>
+                            <option value="http://jx.ck921.com/?url=">接口43</option>
+                            <option value="http://s1y2.com/?url=">接口44</option>
+                            <option value="http://www.ou522.cn/t2/1.php?url=">接口45</option>
+                            <option value="http://jx.xuanpianwang.com/parse?url=">接口46</option>
+                            <option value="https://apiv.ga/magnet/">接口47</option>
+                            <option value="http://jiexi.92fz.cn/player/vip.php?url=">接口48</option>
+                        </select>
+                        <input type="text" name="vipurl" id="vipurl" size=88 value="http://v.youku.com/v_show/id_XMzA4MjMyOTA1Ng==.html">
+                        <input type="button" value="播放" onclick="onPlay()">
+                        <input type="button" value="清除" onclick="onClear()">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><iframe src="" name="play" id="play" width="100%" align="center" height="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe></td>
+            </tr>
+        </table>
+    </body>
 </html>
